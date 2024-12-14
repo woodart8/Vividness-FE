@@ -26,11 +26,11 @@ body {
 }
 
 h1 {
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 h2 {
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 @media screen and (max-width: 1366px) {
