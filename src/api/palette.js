@@ -1,4 +1,4 @@
-import apiClient from '@/api/axios';
+import apiClient from './axios';
 
 export const createPalette = async (hexCode) => {
   try {
