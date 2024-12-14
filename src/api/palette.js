@@ -1,8 +1,8 @@
-import axios from "axios";
+import apiClient from 'axios';
 
 export const createPalette = async (hexCode) => {
   try {
-    const repsponse = await axios.post(`https://api.vividness.co/api/v1/palette/hex/${hexCode}`)
+    const repsponse = await apiClient.post(`/palette/hex/${hexCode}`)
     return repsponse.data;
   } catch (error) {
     console.error('Generate Palette Failed: ', error);
