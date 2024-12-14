@@ -4,8 +4,8 @@
   font-size: 10px;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #202020;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,13 +23,6 @@ body {
 #app {
   width: 100%;
   margin: 0 auto;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #202020;
-    background-color: #ffffff;
-  }
 }
 
 @media screen and (max-width: 1366px) {
