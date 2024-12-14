@@ -289,6 +289,7 @@ onBeforeUnmount(() => {
   border: none;
   outline: none;
   font-size: 1.4rem;
+  background-color: #fff;
   color: #202020;
   cursor: pointer;
 }
@@ -368,7 +369,7 @@ onBeforeUnmount(() => {
   justify-content: center;
   align-items: center;
   height: 4.5rem;
-  width: 24rem;
+  width: 26rem;
   border: none;
   border-radius: 0.6rem;
   background-color: #a1a1a1;
