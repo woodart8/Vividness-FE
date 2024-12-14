@@ -147,6 +147,10 @@ const handleToggle = () => {
 }
 
 const handleSubmit = async () => {
+  if (!checkHex(input.value)) {
+    alert("Invalid Hex Code");
+    return;
+  }
   const color = await getColor(input.value);
   hexCode.value = color.color_code.toUpperCase();
   input.value = '';
