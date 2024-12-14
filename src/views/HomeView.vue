@@ -369,7 +369,7 @@ onBeforeUnmount(() => {
   justify-content: center;
   align-items: center;
   height: 4.5rem;
-  width: 24rem;
+  width: 26rem;
   border: none;
   border-radius: 0.6rem;
   background-color: #a1a1a1;
