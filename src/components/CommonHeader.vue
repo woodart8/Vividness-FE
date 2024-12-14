@@ -2,7 +2,7 @@
   <header class="common-header">
     <div class="logo-wrapper">
       <div class="logo-icon">
-        <img src="/src/assets/favicon.ico" alt="Logo Icon">
+        <img src="/src/assets/logo.svg" alt="Logo Icon">
       </div>
       <span class="logo-text">Vividness</span>
     </div>
