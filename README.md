@@ -37,3 +37,8 @@
 
 **24.12.15**
 서비스 배포
+
+![image](https://github.com/user-attachments/assets/b40322dd-ff8b-45fa-afeb-c941edb49489)
+
+![image](https://github.com/user-attachments/assets/cc11786a-41fc-4238-aa1d-1c41c58764cd)
+
