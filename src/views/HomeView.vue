@@ -147,6 +147,10 @@ const handleToggle = () => {
 }
 
 const handleSubmit = async () => {
+  if (!checkHex(input.value)) {
+    alert("Invalid Hex Code");
+    return;
+  }
   const color = await getColor(input.value);
   hexCode.value = color.color_code.toUpperCase();
   input.value = '';
@@ -271,6 +275,7 @@ onBeforeUnmount(() => {
 .chrome-picker {
  position: absolute;
  margin-top: 0.6rem;
+ z-index: 2;
 }
 
 .input-text-wrapper {
@@ -326,8 +331,8 @@ onBeforeUnmount(() => {
 
 .copy-button {
   position: absolute;
-  top: 0.5rem;
-  right: 0.6rem;
+  top: 0.52rem;
+  right: 0.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -342,8 +347,8 @@ onBeforeUnmount(() => {
 
 .mini-copy-button {
   position: absolute;
-  top: 0.3rem;
-  right: -0.97rem;
+  top: 0.12rem;
+  right: -1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -413,6 +418,11 @@ onBeforeUnmount(() => {
   .palette-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+  }
+
+  .mini-color-code {
+    margin: 0;
+    font-size: 1.6rem;
   }
 }
 </style>
