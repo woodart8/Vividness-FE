@@ -331,7 +331,7 @@ onBeforeUnmount(() => {
 
 .copy-button {
   position: absolute;
-  top: 0.5rem;
+  top: 0.52rem;
   right: 0.2rem;
   display: flex;
   justify-content: center;
