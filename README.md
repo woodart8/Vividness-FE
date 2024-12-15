@@ -8,14 +8,14 @@
 
 - FrontEnd:
 
-![Vue3](https://img.shields.io/badge/Vue3-4FC08D?style=flat&logo=vuedotjs&logoColor=white)
 ![Javascript](https://img.shields.io/badge/Javascript-F7DF1E?style=flat&logo=javascript&logoColor=white)
+![Vue3](https://img.shields.io/badge/Vue3-4FC08D?style=flat&logo=vuedotjs&logoColor=white)
 
 - BackEnd:
 
+![Java](https://img.shields.io/badge/Java-17-007396.svg?&logo=java&color=red)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=springboot&logoColor=white)
 ![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat&logo=gradle&logoColor=white)
-![Java_17](https://img.shields.io/badge/Java_17-000000?style=flat&logo=openjdk&logoColor=white)
 
 - DB:
 
