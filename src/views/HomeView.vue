@@ -419,5 +419,10 @@ onBeforeUnmount(() => {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
+
+  .mini-color-code {
+    margin: 0;
+    font-size: 1.6rem;
+  }
 }
 </style>
