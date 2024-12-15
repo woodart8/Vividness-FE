@@ -181,6 +181,10 @@ const closePickerIfOutside = (event) => {
   }
 };
 
+const generateRandomHex = () => {
+  return Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+};
+
 watch(colors, (newColor) => {
   input.value = newColor.hex.slice(1);
   const luminance = calculateLuminance(input.value);
@@ -199,6 +203,9 @@ watch(input, (newValue) => {
 
 onMounted(() => {
   document.addEventListener('mousedown', closePickerIfOutside);
+  const randomHex = generateRandomHex();
+  hexCode.value = randomHex.toUpperCase();
+  colors.value.hex = '#' + randomHex;
 });
 
 onBeforeUnmount(() => {
