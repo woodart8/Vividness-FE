@@ -159,7 +159,7 @@ const handleSubmit = async () => {
 
 const handleCopy = (index, hexCode) => {
   navigator.clipboard
-    .writeText('#' + hexCode)
+    .writeText(hexCode)
     .then(() => {
       isCopied.value[index] = true;
       setTimeout(() => {
