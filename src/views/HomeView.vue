@@ -347,7 +347,7 @@ onBeforeUnmount(() => {
 
 .mini-copy-button {
   position: absolute;
-  top: 0.2rem;
+  top: 0.12rem;
   right: -1rem;
   display: flex;
   justify-content: center;
