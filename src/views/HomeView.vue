@@ -205,7 +205,6 @@ const handleClickTags = (index) => {
   }
 
   tagItem.selected = !tagItem.selected;
-  this.$set(tagList.value, index, tagItem);
 };
 
 const closePickerIfOutside = (event) => {
@@ -433,10 +432,6 @@ onBeforeUnmount(() => {
   font-weight: 400;
   color: #202020;
   cursor: pointer;
-}
-
-.tag:hover {
-  color: #0069cc;
 }
 
 .tag.selected {
