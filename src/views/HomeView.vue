@@ -42,6 +42,12 @@
         </div>
     </section>
     <section class="ai-generate-section">
+      <div class="tag-container">
+        <h2>Select tags for better results</h2>
+        <ul class="tag-list">
+          <li class="tag" :class="{selected: tagList[index].selected}" @click="handleClickTags(index)" v-for="(item, index) in tagList" :key="index">{{ item.tag }}</li>
+        </ul>
+      </div>
       <button type="button" class="generate-button" @click="fetchPalette">
         <span>Generate Palette with AI</span>
       </button>
@@ -86,13 +92,23 @@ const input = ref('');
 const colors = ref({hex: '#000000'});
 const chromePicker = ref(null);
 
-const palette = ref([])
+const palette = ref([]);
+const tagList = ref(
+  [
+    {tag: 'Pastel', value: '와 어울리는 파스텔톤의', selected: false},
+    {tag: 'Vivid', value: '와 어울리는 비비드한', selected: false},
+    {tag: 'Colorful', value: '와 어울리는 다채로운', selected: false},
+    {tag: 'Warm', value: '와 어울리는 따뜻한', selected: false},
+    {tag: 'Cool', value: '와 어울리는 차가운', selected: false},
+  ]
+)
+const formData = ref({tags: []});
 
 const fetchPalette = async () => {
   isGenereted.value = false;
   isLoading.value = true;
 
-  const response = await createPalette(hexCode.value);
+  const response = await createPalette(hexCode.value, formData.value);
 
   if (response) {
     for (let i = 1; i <= 4; i++) {
@@ -175,6 +191,22 @@ const handleReturn = (index) => {
   isCopied.value[index] = false;
 };
 
+const handleClickTags = (index) => {
+  const tagItem = tagList.value[index];
+
+  if (!tagItem.selected) {
+    if (formData.value.tags.length >= 3) {
+      alert("You can select up to 3 tags!")
+      return;
+    }
+    formData.value.tags.push(tagItem.value);
+  } else {
+    formData.value.tags = formData.value.tags.filter(tag => tag !== tagItem.value);
+  }
+
+  tagItem.selected = !tagItem.selected;
+};
+
 const closePickerIfOutside = (event) => {
   if (chromePicker.value && !chromePicker.value.$el.contains(event.target)) {
     isToggled.value = false;
@@ -192,12 +224,10 @@ watch(colors, (newColor) => {
 });
 
 watch(input, (newValue) => {
-  if (input.value.length === 6) {
-    if (checkHex(newValue)) {
-      colors.value.hex = '#' + newValue;
-      const luminance = calculateLuminance(input.value);
-      textColor.value = luminance > 0.5 ? 'black' : 'white';
-    }
+  if (input.value.length === 6 && checkHex(newValue)) {
+    colors.value.hex = '#' + newValue;
+    const luminance = calculateLuminance(input.value);
+    textColor.value = luminance > 0.5 ? 'black' : 'white';
   }
 })
 
@@ -220,7 +250,7 @@ onBeforeUnmount(() => {
   height: calc(100% - 20rem);
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .color-view-section {
@@ -230,7 +260,7 @@ onBeforeUnmount(() => {
   align-items: center;
   width: 100%;
   gap: 4rem;
-  margin-top: 11.5rem;
+  margin-top: 8rem;
 }
 
 .color-code {
@@ -333,7 +363,6 @@ onBeforeUnmount(() => {
   align-items: center;
   position: relative;
   width: 100%;
-  gap: 0rem;
 }
 
 .copy-button {
@@ -372,8 +401,45 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
-  margin-top: 3rem;
+  gap: 3rem;
+}
+
+.tag-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tag-container h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: black;
+}
+
+.tag-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+}
+
+.tag {
+  list-style: none;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #202020;
+  cursor: pointer;
+}
+
+.tag:hover {
+  color: #0069cc;
+}
+
+.tag.selected {
+  color: #0069cc;
 }
 
 .generate-button {
@@ -403,6 +469,7 @@ onBeforeUnmount(() => {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
+  margin-top: 2rem;
 }
 
 .loading-spinner {
