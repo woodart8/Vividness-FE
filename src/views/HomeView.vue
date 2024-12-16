@@ -204,7 +204,8 @@ const handleClickTags = (index) => {
     formData.value.tags = formData.value.tags.filter(tag => tag !== tagItem.value);
   }
 
-  this.$set(tagList, index, {...tagItem, selected: !tagItem.selected});
+  tagItem.selected = !tagItem.selected;
+  this.$set(tagList.value, index, tagItem);
 };
 
 const closePickerIfOutside = (event) => {
