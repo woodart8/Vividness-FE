@@ -76,7 +76,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onBeforeUnmount } from 'vue';
+import { ref, watch, onMounted, onBeforeUnmount, nextTick } from 'vue';
 import { getColor } from '../api/color';
 import { createPalette } from '../api/palette';
 import { Chrome } from '@ckpack/vue-color';
@@ -497,6 +497,12 @@ onBeforeUnmount(() => {
   .mini-color-code {
     margin: 0;
     font-size: 1.6rem;
+  }
+}
+
+@media (hover: none) {
+  .tag:hover {
+    color: inherit; /* 혹은 원하는 기본 스타일 */
   }
 }
 </style>
