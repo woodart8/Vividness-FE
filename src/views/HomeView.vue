@@ -45,7 +45,7 @@
       <div class="tag-container">
         <h2>Select tags for better results</h2>
         <ul class="tag-list">
-          <li class="tag" :class="{selected: tagList[index].selected}" @click="handleClickTags(index)" v-for="(item, index) in tagList" :key="index">{{ item.tag }}</li>
+          <li class="tag" :class="{selected: item.selected}" @click="handleClickTags(index)" v-for="(item, index) in tagList" :key="index">{{ item.tag }}</li>
         </ul>
       </div>
       <button type="button" class="generate-button" @click="fetchPalette">
@@ -76,7 +76,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onBeforeUnmount } from 'vue';
+import { ref, watch, onMounted, onBeforeUnmount, nextTick } from 'vue';
 import { getColor } from '../api/color';
 import { createPalette } from '../api/palette';
 import { Chrome } from '@ckpack/vue-color';
@@ -95,11 +95,11 @@ const chromePicker = ref(null);
 const palette = ref([]);
 const tagList = ref(
   [
-    {tag: 'Pastel', value: '와 어울리는 파스텔톤의', selected: false},
-    {tag: 'Vivid', value: '와 어울리는 비비드한', selected: false},
-    {tag: 'Colorful', value: '와 어울리는 다채로운', selected: false},
-    {tag: 'Warm', value: '와 어울리는 따뜻한', selected: false},
-    {tag: 'Cool', value: '와 어울리는 차가운', selected: false},
+    {tag: 'Pastel', value: '파스텔톤', selected: false},
+    {tag: 'Vivid', value: '비비드한', selected: false},
+    {tag: 'Colorful', value: '다채로운', selected: false},
+    {tag: 'Warm', value: '따뜻한', selected: false},
+    {tag: 'Cool', value: '차가운', selected: false},
   ]
 )
 const formData = ref({tags: []});
@@ -432,10 +432,6 @@ onBeforeUnmount(() => {
   font-weight: 400;
   color: #202020;
   cursor: pointer;
-}
-
-.tag:hover {
-  color: #0069cc;
 }
 
 .tag.selected {
