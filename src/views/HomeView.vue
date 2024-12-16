@@ -45,7 +45,7 @@
       <div class="tag-container">
         <h2>Select tags for better results</h2>
         <ul class="tag-list">
-          <li class="tag" :class="{selected: tagList[index].selected}" @click="handleClickTags(index)" v-for="(item, index) in tagList" :key="index">{{ item.tag }}</li>
+          <li class="tag" :class="{selected: item.selected}" @click="handleClickTags(index)" v-for="(item, index) in tagList" :key="index">{{ item.tag }}</li>
         </ul>
       </div>
       <button type="button" class="generate-button" @click="fetchPalette">
@@ -204,7 +204,7 @@ const handleClickTags = (index) => {
     formData.value.tags = formData.value.tags.filter(tag => tag !== tagItem.value);
   }
 
-  tagList.value[index] = { ...tagItem, selected: !tagItem.selected };
+  this.$set(tagList, index, {...tagItem, selected: !tagItem.selected});
 };
 
 const closePickerIfOutside = (event) => {
