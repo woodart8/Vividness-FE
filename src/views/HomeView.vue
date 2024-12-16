@@ -95,11 +95,11 @@ const chromePicker = ref(null);
 const palette = ref([]);
 const tagList = ref(
   [
-    {tag: 'Pastel', value: '와 어울리는 파스텔톤의', selected: false},
-    {tag: 'Vivid', value: '와 어울리는 비비드한', selected: false},
-    {tag: 'Colorful', value: '와 어울리는 다채로운', selected: false},
-    {tag: 'Warm', value: '와 어울리는 따뜻한', selected: false},
-    {tag: 'Cool', value: '와 어울리는 차가운', selected: false},
+    {tag: 'Pastel', value: '파스텔톤', selected: false},
+    {tag: 'Vivid', value: '비비드한', selected: false},
+    {tag: 'Colorful', value: '다채로운', selected: false},
+    {tag: 'Warm', value: '따뜻한', selected: false},
+    {tag: 'Cool', value: '차가운', selected: false},
   ]
 )
 const formData = ref({tags: []});
