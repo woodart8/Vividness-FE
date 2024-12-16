@@ -95,6 +95,8 @@ const chromePicker = ref(null);
 const palette = ref([]);
 const tagList = ref(
   [
+    {tag: 'Similar', value: '같은 계열', selected: false},
+    {tag: 'Complementary ', value: '보색', selected: false},
     {tag: 'Pastel', value: '파스텔톤', selected: false},
     {tag: 'Vivid', value: '비비드한', selected: false},
     {tag: 'Colorful', value: '다채로운', selected: false},
