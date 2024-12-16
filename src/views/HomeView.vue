@@ -204,7 +204,7 @@ const handleClickTags = (index) => {
     formData.value.tags = formData.value.tags.filter(tag => tag !== tagItem.value);
   }
 
-  tagItem.selected = !tagItem.selected;
+  tagList.value[index] = { ...tagItem, selected: !tagItem.selected };
 };
 
 const closePickerIfOutside = (event) => {
@@ -497,12 +497,6 @@ onBeforeUnmount(() => {
   .mini-color-code {
     margin: 0;
     font-size: 1.6rem;
-  }
-}
-
-@media (hover: none) {
-  .tag:hover {
-    color: inherit; /* 혹은 원하는 기본 스타일 */
   }
 }
 </style>
