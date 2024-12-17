@@ -1,10 +1,13 @@
 <template>
   <main class="home">
+    <div class="title-wrapper">
+      <h1 class="title">AI Color Palette Generator</h1>
+    </div>
     <section class="color-view-section">
       <div class="color-box-wrapper">
           <div class="color-box" :style="{backgroundColor: '#' + hexCode}"></div>
           <div class="color-code-wrapper">
-            <h1 class="color-code">#{{ hexCode }}</h1>
+            <span class="color-code">#{{ hexCode }}</span>
             <button type="button" class="copy-button"
               v-if="isCopied[0]"
             >
@@ -43,7 +46,7 @@
     </section>
     <section class="ai-generate-section">
       <div class="tag-container">
-        <h2>Select tags for better results</h2>
+        <span>Select tags for better results</span>
         <ul class="tag-list">
           <li class="tag" :class="{selected: item.selected}" @click="handleClickTags(index)" v-for="(item, index) in tagList" :key="index">{{ item.tag }}</li>
         </ul>
@@ -55,7 +58,7 @@
         <div class="color-box-wrapper" v-for="(item, index) in palette" :key="index">
           <div class="mini-color-box" :style="{backgroundColor: '#' + item.hexCode}"></div>
           <div class="color-code-wrapper">
-            <h2 class="mini-color-code">#{{ item.hexCode }}</h2>
+            <span class="mini-color-code">#{{ item.hexCode }}</span>
             <button type="button" class="mini-copy-button"
               v-if="isCopied[index+1]"
             >
@@ -255,6 +258,16 @@ onBeforeUnmount(() => {
   gap: 4rem;
 }
 
+.title-wrapper {
+  margin-top: 2rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
 .color-view-section {
   display: flex;
   flex-direction: column;
@@ -262,17 +275,18 @@ onBeforeUnmount(() => {
   align-items: center;
   width: 100%;
   gap: 4rem;
-  margin-top: 8rem;
 }
 
 .color-code {
   margin: 0;
   font-size: 2.4rem;
+  font-weight: 500;
 }
 
 .mini-color-code {
   margin: 0;
   font-size: 1.8rem;
+  font-weight: 500;
 }
 
 .color-box {
@@ -413,7 +427,7 @@ onBeforeUnmount(() => {
   gap: 1rem;
 }
 
-.tag-container h2 {
+.tag-container span {
   margin: 0;
   font-size: 1.6rem;
   font-weight: 500;
