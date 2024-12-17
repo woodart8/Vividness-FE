@@ -173,6 +173,10 @@ onMounted(() => {
   cursor: pointer;  
 }
 
+.copy-button span {
+  font-weight: 700;
+}
+
 @media screen and (max-width: 1366px) {
     .color-container {
       grid-template-columns: repeat(8, 1fr);
