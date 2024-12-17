@@ -1,9 +1,8 @@
 <template>
   <CommonHeader></CommonHeader>
-  <HomeView></HomeView>
+  <router-view></router-view>
 </template>
 
 <script setup>
 import CommonHeader from './components/CommonHeader.vue';
-import HomeView from './views/HomeView.vue';
 </script>

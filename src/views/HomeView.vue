@@ -79,8 +79,8 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onBeforeUnmount, nextTick } from 'vue';
-import { getColor } from '../api/color';
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue';
+import { getColor, addCopyCount } from '../api/color';
 import { createPalette } from '../api/palette';
 import { Chrome } from '@ckpack/vue-color';
 
@@ -116,13 +116,14 @@ const fetchPalette = async () => {
   const response = await createPalette(hexCode.value, formData.value);
 
   if (response) {
-    for (let i = 1; i <= 4; i++) {
+    const colorList = response.palette;
+    for (let i = 0; i < colorList.length; i++) {
       if (palette.value.length < 4) {
         palette.value.push({
-          hexCode: response["color_code" + i].toUpperCase()
+          hexCode: colorList[i].toUpperCase()
         });
       } else {
-        palette.value[i-1] = { hexCode: response["color_code" + i].toUpperCase() }
+        palette.value[i].hexCode = colorList[i].toUpperCase();
       }
 
       if (isCopied.value.length < 5) {
@@ -178,7 +179,7 @@ const handleSubmit = async () => {
   isToggled.value = false;
 }
 
-const handleCopy = (index, hexCode) => {
+const handleCopy = async (index, hexCode) => {
   navigator.clipboard
     .writeText(hexCode)
     .then(() => {
@@ -190,6 +191,8 @@ const handleCopy = (index, hexCode) => {
     .catch((error) => {
       console.error('Copy Failed:', error);
     });
+
+  await addCopyCount(hexCode);
 };
 
 const handleReturn = (index) => {
@@ -252,14 +255,13 @@ onBeforeUnmount(() => {
 .home {
   display: flex;
   width: 100%;
-  height: calc(100% - 20rem);
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .title-wrapper {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 .title {
@@ -280,13 +282,13 @@ onBeforeUnmount(() => {
 .color-code {
   margin: 0;
   font-size: 2.4rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .mini-color-code {
   margin: 0;
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .color-box {
@@ -417,7 +419,7 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .tag-container {
@@ -460,6 +462,7 @@ onBeforeUnmount(() => {
   align-items: center;
   height: 4.5rem;
   width: 26rem;
+  margin-top: 1rem;
   border: none;
   border-radius: 0.6rem;
   background-color: #a1a1a1;
@@ -482,6 +485,7 @@ onBeforeUnmount(() => {
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .loading-spinner {
