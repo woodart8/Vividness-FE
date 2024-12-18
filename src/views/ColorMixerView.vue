@@ -40,7 +40,6 @@
           v-for="(item, index) in sourceColorList"
           :key="index"
           @click="startColorDrag(item.colorCode, $event)"
-          @touchstart="startColorDrag(item.colorCode, $event)"
         ></div>
       </div>
     </section>
@@ -76,33 +75,33 @@ const colorRatios = ref([]);
 
 const isCopied = ref(false);
 
-// 클릭 또는 터치시 색상 따라가게
 const startColorDrag = (color, event) => {
   selectedColor.value = color;
   dragging.value = true;
 
-  const clientX = event.touches ? event.touches[0].clientX : event.clientX;
-  const clientY = event.touches ? event.touches[0].clientY : event.clientY;
+  const clientX = event.clientX;
+  const clientY = event.clientY;
 
   mousePosition.value = { x: clientX, y: clientY };
 
   const onMove = (moveEvent) => {
-    const x = moveEvent.touches ? moveEvent.touches[0].clientX : moveEvent.clientX;
-    const y = moveEvent.touches ? moveEvent.touches[0].clientY : moveEvent.clientY;
+    const x = moveEvent.clientX;
+    const y = moveEvent.clientY;
     mousePosition.value = { x, y };
   };
 
   const onEnd = () => {
     document.removeEventListener('mousemove', onMove);
     document.removeEventListener('mouseup', onEnd);
-    document.removeEventListener('touchmove', onMove);
-    document.removeEventListener('touchend', onEnd);
+
+    setTimeout(() => {
+      dragging.value = false;
+      selectedColor.value = '';
+    }, 50); // 50ms 지연
   };
 
   document.addEventListener('mousemove', onMove);
   document.addEventListener('mouseup', onEnd);
-  document.addEventListener('touchmove', onMove);
-  document.addEventListener('touchend', onEnd);
 };
 
 // 클릭하여 색을 합치는 함수
