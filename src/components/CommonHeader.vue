@@ -12,6 +12,10 @@
           <span class="menu-text">Palette Generator</span>
           <i class="fa-solid fa-palette"></i>
         </li>
+        <li class="menu" @click="goColorMixer">
+          <span class="menu-text">Color Mixer</span>
+          <i class="fa-solid fa-mortar-pestle"></i>
+        </li>
         <li class="menu" @click="goPopularHex">
           <span class="menu-text">Popular Hex</span>
           <i class="fa-solid fa-fire"></i>
@@ -25,13 +29,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
 const goHome = () => {
   router.push('/');
+}
+
+const goColorMixer = () => {
+  router.push('/mixer');
 }
 
 const goPopularHex = () => {

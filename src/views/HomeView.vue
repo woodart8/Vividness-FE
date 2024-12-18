@@ -5,44 +5,44 @@
     </div>
     <section class="color-view-section">
       <div class="color-box-wrapper">
-          <div class="color-box" :style="{backgroundColor: '#' + hexCode}"></div>
-          <div class="color-code-wrapper">
-            <span class="color-code">#{{ hexCode }}</span>
-            <button type="button" class="copy-button"
-              v-if="isCopied[0]"
-            >
-              <i class="fa-solid fa-check"></i>
-            </button>
-            <button type="button" class="copy-button"
-              v-else
-              @click="handleCopy(0, hexCode)"
-            >
-              <i class="fa-regular fa-copy"></i>
-            </button>
-          </div>
+        <div class="color-box" :style="{backgroundColor: '#' + hexCode}"></div>
+        <div class="color-code-wrapper">
+          <span class="color-code">#{{ hexCode }}</span>
+          <button type="button" class="copy-button"
+            v-if="isCopied[0]"
+          >
+            <i class="fa-solid fa-check"></i>
+          </button>
+          <button type="button" class="copy-button"
+            v-else
+            @click="handleCopy(0, hexCode)"
+          >
+            <i class="fa-regular fa-copy"></i>
+          </button>
         </div>
-        <div class="search-bar">
-          <div class="color-picker-wrapper">
-            <button type="button" class="color-picker-button" @click="handleToggle" :style="{backgroundColor: colors.hex, color: textColor}">
-              <i class="fa-solid fa-eye-dropper"></i>
-            </button>
-            <Chrome v-if="isToggled" class="chrome-picker" v-model="colors" ref="chromePicker"/>
-          </div>
-          <div class="input-text-wrapper">
-            <input 
-              type="text"
-              name="hex-code-input"
-              class="color-input"
-              maxlength="6"
-              placeholder="Hex code or use the picker"
-              v-model="input"
-              @keyup.enter="handleSubmit"
-            >
-            <button type="button" class="submit-button" @click="handleSubmit">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </div>
+      </div>
+      <div class="search-bar">
+        <div class="color-picker-wrapper">
+          <button type="button" class="color-picker-button" @click="handleToggle" :style="{backgroundColor: colors.hex, color: textColor}">
+            <i class="fa-solid fa-eye-dropper"></i>
+          </button>
+          <Chrome v-if="isToggled" class="chrome-picker" v-model="colors" ref="chromePicker"/>
         </div>
+        <div class="input-text-wrapper">
+          <input 
+            type="text"
+            name="hex-code-input"
+            class="color-input"
+            maxlength="6"
+            placeholder="Hex code or use the picker"
+            v-model="input"
+            @keyup.enter="handleSubmit"
+          >
+          <button type="button" class="submit-button" @click="handleSubmit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
     </section>
     <section class="ai-generate-section">
       <div class="tag-container">
@@ -430,10 +430,8 @@ onBeforeUnmount(() => {
 }
 
 .tag-container span {
-  margin: 0;
   font-size: 1.6rem;
-  font-weight: 500;
-  color: black;
+  font-weight: 700;
 }
 
 .tag-list {
