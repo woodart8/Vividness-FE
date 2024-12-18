@@ -324,7 +324,7 @@ const handleRefresh = () => {
 
   .copy-button {
     top: 0.52rem;
-    right: -1.2rem;
+    right: -1.4rem;
   }
 }
 </style>
