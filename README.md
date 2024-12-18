@@ -23,6 +23,7 @@
 
 > Deployment:
 
+![Amazon RDS](https://img.shields.io/badge/Amazon_RDS-527FFF?style=flat&logo=amazonrds&logoColor=white) 
 ![AWS_Certificate_Manager](https://img.shields.io/badge/AWS_Certificate_Manager-e84845?style=flat&logo=awscertificatemanager&logoColor=white)
 ![Amazon_Elastic_Beanstalk](https://img.shields.io/badge/Amazon_Elastic_Beanstalk-e66d00?style=flat&logo=amazonelasticbeanstalk&logoColor=white)
 ![Amazon_Load_Balancer](https://img.shields.io/badge/Amazon_Load_Balancer-ed8134?style=flat&logo=amazonloadbalancer&logoColor=white) 
