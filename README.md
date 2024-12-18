@@ -29,6 +29,7 @@
 ![Amazon_EC2](https://img.shields.io/badge/Amazon_EC2-FF9900?style=flat&logo=amazonec2&logoColor=white)
 
 ![Github Actions](https://img.shields.io/badge/Github_Actions-2088FF?style=flat&logo=githubactions&logoColor=white)
+![Amazon RDS](https://img.shields.io/badge/Amazon_RDS-527FFF?style=flat&logo=amazonrds&logoColor=white) 
 ![Amazon_VPC](https://img.shields.io/badge/Amazon_VPC-5e33b6?style=flat&logo=amazonvpc&logoColor=white)
 ![Amazon Route 53](https://img.shields.io/badge/Route_53-8C4FFF?style=flat&logo=amazonroute53&logoColor=white) 
 
@@ -40,5 +41,14 @@
 
 ![image](https://github.com/user-attachments/assets/b40322dd-ff8b-45fa-afeb-c941edb49489)
 
+**24.12.16**
+렌더링시 디폴트 색상 랜덤으로 나오게 변경
+
 ![image](https://github.com/user-attachments/assets/cc11786a-41fc-4238-aa1d-1c41c58764cd)
+
+**24.12.17**
+인기 있는 색상 추가
+
+![image](https://github.com/user-attachments/assets/5cd791b0-6b47-4a99-89ed-cd01ea5285b4)
+
 
