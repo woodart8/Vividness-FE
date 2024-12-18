@@ -51,4 +51,10 @@
 
 ![image](https://github.com/user-attachments/assets/5cd791b0-6b47-4a99-89ed-cd01ea5285b4)
 
+**24.12.18**
+컬러 믹서 추가
+
+![image](https://github.com/user-attachments/assets/0331e971-d4bf-49a5-a804-6c9fd1a67ab4)
+
+
 
