@@ -27,9 +27,10 @@
       </div>
     </section>
     <section class="source-color-section">
-      <span v-if="!resultColor" class="explanation">Choose a color below and put it in the box above</span>
+      <div v-if="!resultColor" class="explanation-wrapper">
+        <span class="explanation">Choose a color below and put it in the box above</span>
+      </div>
       <button v-else type="button" class="refresh-button" @click="handleRefresh">
-        <span>Refresh</span>
         <i class="fa-solid fa-arrow-rotate-right"></i>
       </button>
       <div class="color-container">
@@ -234,10 +235,10 @@ const handleRefresh = () => {
   gap: 0.5rem;
   background-color: transparent;
   border: none;
-  color: #202020;
-  font-size: 1.6rem;
-  font-weight: 700;
   cursor: pointer;
+  color: #202020;
+  font-size: 2rem;
+  padding: 0;
 }
 
 .color-box {
@@ -262,7 +263,15 @@ const handleRefresh = () => {
   cursor: pointer;
 }
 
+.explanation-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+}
+
 .explanation {
+  line-height: 1.6rem;
   font-size: 1.6rem;
   font-weight: 700;
 }
