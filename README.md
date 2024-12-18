@@ -41,6 +41,9 @@
 
 ![image](https://github.com/user-attachments/assets/b40322dd-ff8b-45fa-afeb-c941edb49489)
 
+**24.12.16**
+렌더링시 디폴트 색상 랜덤으로 나오게 변경
+
 ![image](https://github.com/user-attachments/assets/cc11786a-41fc-4238-aa1d-1c41c58764cd)
 
 **24.12.17**
