@@ -97,6 +97,11 @@ const startColorDrag = (color, event) => {
     document.removeEventListener('mouseup', onEnd);
     document.removeEventListener('touchmove', onMove);
     document.removeEventListener('touchend', onEnd);
+
+    setTimeout(() => {
+      dragging.value = false;
+      selectedColor.value = '';
+    }, 50); // 50ms 지연
   };
 
   document.addEventListener('mousemove', onMove);
