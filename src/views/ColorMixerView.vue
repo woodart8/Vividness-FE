@@ -27,7 +27,11 @@
       </div>
     </section>
     <section class="source-color-section">
-      <span class="explanation">Choose a color below and put it in the box above</span>  
+      <span v-if="!resultColor" class="explanation">Choose a color below and put it in the box above</span>
+      <button v-else type="button" class="refresh-button" @click="handleRefresh">
+        <span>Refresh</span>
+        <i class="fa-solid fa-arrow-rotate-right"></i>
+      </button>
       <div class="color-container">
         <div
           class="color-box"
@@ -159,6 +163,11 @@ const handleCopy = async (hexCode) => {
 const handleReturn = () => {
   isCopied.value = false;
 };
+
+const handleRefresh = () => {
+  resultColor.value = '';
+  colorRatios.value = []; 
+}
 </script>
 
 <style scoped>
@@ -215,6 +224,19 @@ const handleReturn = () => {
   color: #888888;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.refresh-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: none;
+  color: #202020;
+  font-size: 1.6rem;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -293,7 +315,7 @@ const handleReturn = () => {
 
   .copy-button {
     top: 0.52rem;
-    right: -1rem;
+    right: -1.2rem;
   }
 }
 </style>
