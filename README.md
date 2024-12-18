@@ -42,3 +42,9 @@
 
 ![image](https://github.com/user-attachments/assets/cc11786a-41fc-4238-aa1d-1c41c58764cd)
 
+**24.12.17**
+인기 있는 색상 추가
+
+![image](https://github.com/user-attachments/assets/5cd791b0-6b47-4a99-89ed-cd01ea5285b4)
+
+
