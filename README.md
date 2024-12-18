@@ -23,13 +23,13 @@
 
 > Deployment:
 
-![Amazon RDS](https://img.shields.io/badge/Amazon_RDS-527FFF?style=flat&logo=amazonrds&logoColor=white) 
 ![AWS_Certificate_Manager](https://img.shields.io/badge/AWS_Certificate_Manager-e84845?style=flat&logo=awscertificatemanager&logoColor=white)
 ![Amazon_Elastic_Beanstalk](https://img.shields.io/badge/Amazon_Elastic_Beanstalk-e66d00?style=flat&logo=amazonelasticbeanstalk&logoColor=white)
 ![Amazon_Load_Balancer](https://img.shields.io/badge/Amazon_Load_Balancer-ed8134?style=flat&logo=amazonloadbalancer&logoColor=white) 
 ![Amazon_EC2](https://img.shields.io/badge/Amazon_EC2-FF9900?style=flat&logo=amazonec2&logoColor=white)
 
 ![Github Actions](https://img.shields.io/badge/Github_Actions-2088FF?style=flat&logo=githubactions&logoColor=white)
+![Amazon RDS](https://img.shields.io/badge/Amazon_RDS-527FFF?style=flat&logo=amazonrds&logoColor=white) 
 ![Amazon_VPC](https://img.shields.io/badge/Amazon_VPC-5e33b6?style=flat&logo=amazonvpc&logoColor=white)
 ![Amazon Route 53](https://img.shields.io/badge/Route_53-8C4FFF?style=flat&logo=amazonroute53&logoColor=white) 
 
