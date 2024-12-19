@@ -3,7 +3,7 @@
     <a href="https://github.com/woodart8" target="_blank" class="github-link">
       <i class="fa-brands fa-square-github"></i>
     </a>
-    <span>Copyright 2024 ~ Vividness All rights reserved.</span>
+    <span>Copyright 2024 Vividness All rights reserved.</span>
   </footer>
 </template>
 
