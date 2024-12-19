@@ -8,7 +8,11 @@
     </div>
     <nav class="menu-nav">
       <ul class="menu-list">
-        <li class="menu" @click="goHome">
+        <li class="menu" @click="goPopularHex">
+          <span class="menu-text">Popular Hex</span>
+          <i class="fa-solid fa-fire"></i>
+        </li>
+        <li class="menu" @click="goAIGenerator">
           <span class="menu-text">Palette Generator</span>
           <i class="fa-solid fa-palette"></i>
         </li>
@@ -16,14 +20,7 @@
           <span class="menu-text">Color Mixer</span>
           <i class="fa-solid fa-mortar-pestle"></i>
         </li>
-        <li class="menu" @click="goPopularHex">
-          <span class="menu-text">Popular Hex</span>
-          <i class="fa-solid fa-fire"></i>
-        </li>
       </ul>
-      <a href="https://github.com/woodart8" target="_blank" class="github-link">
-        <i class="fa-brands fa-square-github"></i>
-      </a>
     </nav>
   </header>
 </template>
@@ -35,6 +32,10 @@ const router = useRouter();
 
 const goHome = () => {
   router.push('/');
+}
+
+const goAIGenerator = () => {
+  router.push('/generator');
 }
 
 const goColorMixer = () => {
@@ -106,19 +107,6 @@ const goPopularHex = () => {
 .menu i {
   display: none;
   font-size: 3rem;
-}
-
-.github-link{
-  display: flex;
-  height: 3.6rem;
-  width: 3.6rem;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  border: none;
-  font-size: 3.6rem;
-  text-decoration: none;
-  color: #202020;
 }
 
 @media screen and (max-width: 600px) {

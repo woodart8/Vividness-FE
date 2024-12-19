@@ -2,12 +2,18 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import PopularHexView from '../views/PopularHexView.vue';
 import ColorMixerView from '../views/ColorMixerView.vue';
+import AIGeneratoView from '../views/AIGeneratoView.vue';
 
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView,
+  },
+  {
+    path: '/generator',
+    name: 'generator',
+    component: AIGeneratoView,
   },
   {
     path: '/mixer',
