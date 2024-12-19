@@ -20,6 +20,11 @@ body {
   min-height: 100vh;
 }
 
+main {
+  width: 100%;
+  height: calc(100% - 24rem);
+}
+
 #app {
   width: 100%;
   margin: 0 auto;

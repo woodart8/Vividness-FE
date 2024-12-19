@@ -280,7 +280,7 @@ const handleRefresh = () => {
   flex-direction: column;
   align-items: center;
   gap: 4rem;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
 }
 
 .color-container {
