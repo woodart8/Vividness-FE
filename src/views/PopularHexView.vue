@@ -120,7 +120,6 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   width: 100%;
-  justify-content: center;
   align-items: center;
   gap: 3rem;
 }
