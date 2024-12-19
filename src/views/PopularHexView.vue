@@ -140,7 +140,7 @@ onMounted(() => {
   grid-template-columns: repeat(8, 1fr);
   gap: 2rem;
   margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 
 .color-box {
