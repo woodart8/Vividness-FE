@@ -76,21 +76,23 @@ const colorRatios = ref([]);
 const isCopied = ref(false);
 
 const startColorDrag = (color, event) => {
+  if (dragging.value) return;
+
   selectedColor.value = color;
   dragging.value = true;
 
   // rem 값을 픽셀로 변환
   const remToPx = (rem) => parseFloat(getComputedStyle(document.documentElement).fontSize) * rem;
-  
+
   // 2rem에 해당하는 픽셀 값
   const offset = remToPx(2);
-  
+
   // 스크롤 보정 포함
   const startX = event.pageX - offset;
   const startY = event.pageY - offset;
-  
+
   mousePosition.value = { x: startX, y: startY };
-  
+
   const onMove = (moveEvent) => {
     const x = moveEvent.pageX - offset;
     const y = moveEvent.pageY - offset;
