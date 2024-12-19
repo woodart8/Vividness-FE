@@ -57,7 +57,7 @@
 ![image](https://github.com/user-attachments/assets/0331e971-d4bf-49a5-a804-6c9fd1a67ab4)
 
 **24.12.19**
-메인 화면 추가
+메인 화면 추가, Footer 추가
 
 ![image](https://github.com/user-attachments/assets/c85e91d9-a482-4a99-b746-f6033bb57f56)
 
