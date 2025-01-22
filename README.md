@@ -1,6 +1,6 @@
 # Vividness(AI기반 색상 팔레트 생성 서비스)
 
-**사이트**: [Vividness](https://www.vividness.co/) 배포 종료
+**사이트**: [Vividness](https://www.vividness.co/) 배포 중단
 
 **개발 기간** : 24.12.14 ~
 
