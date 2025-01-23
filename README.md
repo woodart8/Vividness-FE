@@ -10,6 +10,7 @@
 
 ![Javascript](https://img.shields.io/badge/Javascript-F7DF1E?style=flat&logo=javascript&logoColor=white)
 ![Vue3](https://img.shields.io/badge/Vue3-4FC08D?style=flat&logo=vuedotjs&logoColor=white)
+![Clipboard](https://img.shields.io/badge/Clipboard-333333?style=flat&logo=clipboard&logoColor=white)
 
 > BackEnd:
 
